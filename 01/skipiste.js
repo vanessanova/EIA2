@@ -6,7 +6,6 @@ var Aufgabe2;
     function ski() {
         var canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);
-        console.log(canvas);
         var crc2 = canvas.getContext("2d");
         //Himmel
         crc2.fillStyle = "#CEECF5";
@@ -231,6 +230,11 @@ var Aufgabe2;
             crc2.stroke();
             crc2.fillStyle = _color;
             crc2.fill();
+        }
+        for (var i = 0; i < 6; i++) {
+            var x = 10 + Math.random() * 170;
+            var y = 380 + Math.random() * 170;
+            drawTree1(x, y, "#006200");
         }
         function drawTree1(_x, _y, _color) {
             crc2.beginPath();
