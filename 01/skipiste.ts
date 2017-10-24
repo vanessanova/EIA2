@@ -1,11 +1,19 @@
-function canvas(): void {
+
+namespace Aufgabe2 {
+
+window.addEventListener("load", ski);
+let crc2: CanvasRenderingContext2D;
+    
+//Funktion Canvas
+
+
+function ski(): void {
     let  canvas: HTMLCanvasElement = document.getElementsByTagName("canvas") [0];
 
     console.log(canvas);
 
     let crc2: CanvasRenderingContext2D = canvas.getContext("2d");
     
-    console.log(crc2);
     
 //Himmel
     
@@ -211,7 +219,7 @@ function canvas(): void {
     crc2.fillStyle = "#ffffff";
     crc2.fill(); 
 //Baum1
-    
+ /*   
     crc2.beginPath();
     crc2.moveTo(50, 550);
     crc2.lineTo(100, 550);
@@ -260,5 +268,63 @@ function canvas(): void {
     crc2.fill();
     
   }
-window.addEventListener("load", canvas);
+    */
+function drawTree2(_x: number, _y: number, _color: string): void {
+        
+    crc2.beginPath();
+    crc2.moveTo(_x, _y);
+    crc2.lineTo(_x + 30, _y);
+    crc2.lineTo(_x + 15, _y - 30);
+    crc2.closePath();
+    crc2.strokeStyle = _color;
+    crc2.stroke();
+    crc2.fillStyle = _color;
+    crc2.fill();
+    
+    }
+    for (let i: number = 0; i < 6; i++) {
+    
+        let x: number = 10 + Math.random() * 170;
+        let y: number = 380 + Math.random() * 170;
+        
+        drawTree1(x, y, "#006200");
+        }
+    
+    
+ function drawTree1(_x: number, _y: number, _color: string): void {
+        
+    crc2.beginPath();
+    crc2.moveTo(_x, _y);
+    crc2.lineTo(_x + 40, _y);
+    crc2.lineTo(_x + 20, _y - 60);
+    crc2.closePath();
+    crc2.strokeStyle = _color;
+    crc2.stroke();
+    crc2.fillStyle = _color;
+    crc2.fill();
+       
+ 
+    
+//For Schleife Schneeflocken
+    
+    for (let i: number = 0; i < 200; i++) {
+    
+        let x: number = 0 + Math.random() * 800;
+        let y: number = 0 + Math.random() * 250;
+        
+        drawSnowflakes(x, y, 2, 0, 2 * Math.PI, "#ffffff");
+        }
+    
+    
+     
+function drawSnowflakes(_x: number, _y: number, _radius: number, _winkel: number, _circle: number, _color: string): void {
 
+    crc2.beginPath();
+    crc2.arc(_x, _y, _radius, _winkel, _circle);
+    crc2.fillStyle = _color;
+    crc2.fill();
+    
+    }
+ }
+ }
+    }   
