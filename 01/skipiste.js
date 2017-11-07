@@ -170,94 +170,83 @@ var Aufgabe2;
         crc2.fillStyle = "#ffffff";
         crc2.fill();
         //Baum1
-        /*
-           crc2.beginPath();
-           crc2.moveTo(50, 550);
-           crc2.lineTo(100, 550);
-           crc2.lineTo(75, 450);
-           crc2.closePath();
-           crc2.strokeStyle = "#38610B";
-           crc2.stroke();
-           crc2.fillStyle = "#38610B";
-           crc2.fill();
-           
+        crc2.beginPath();
+        crc2.moveTo(50, 550);
+        crc2.lineTo(100, 550);
+        crc2.lineTo(75, 450);
+        crc2.closePath();
+        crc2.strokeStyle = "#38610B";
+        crc2.stroke();
+        crc2.fillStyle = "#38610B";
+        crc2.fill();
         //Baum2
-           
-           crc2.beginPath();
-           crc2.moveTo(130, 400);
-           crc2.lineTo(180, 400);
-           crc2.lineTo(155, 300);
-           crc2.closePath();
-           crc2.strokeStyle = "#5FB404";
-           crc2.stroke();
-           crc2.fillStyle = "#5FB404";
-           crc2.fill();
-           
-       
-           //Baum3
-           
-           crc2.beginPath();
-           crc2.moveTo(150, 500);
-           crc2.lineTo(200, 500);
-           crc2.lineTo(175, 420);
-           crc2.closePath();
-           crc2.strokeStyle = "#006200";
-           crc2.stroke();
-           crc2.fillStyle = "#006200";
-           crc2.fill();
-           
-           //Baum4
-           
-           crc2.beginPath();
-           crc2.moveTo(200, 550);
-           crc2.lineTo(300, 550);
-           crc2.lineTo(250, 320);
-           crc2.closePath();
-           crc2.strokeStyle = "#006200";
-           crc2.stroke();
-           crc2.fillStyle = "#006200";
-           crc2.fill();
-           
-         }
-           */
-        function drawTree2(_x, _y, _color) {
+        crc2.beginPath();
+        crc2.moveTo(130, 400);
+        crc2.lineTo(180, 400);
+        crc2.lineTo(155, 300);
+        crc2.closePath();
+        crc2.strokeStyle = "#5FB404";
+        crc2.stroke();
+        crc2.fillStyle = "#5FB404";
+        crc2.fill();
+        //Baum3
+        crc2.beginPath();
+        crc2.moveTo(150, 500);
+        crc2.lineTo(200, 500);
+        crc2.lineTo(175, 420);
+        crc2.closePath();
+        crc2.strokeStyle = "#006200";
+        crc2.stroke();
+        crc2.fillStyle = "#006200";
+        crc2.fill();
+        //Baum4
+        crc2.beginPath();
+        crc2.moveTo(200, 550);
+        crc2.lineTo(300, 550);
+        crc2.lineTo(250, 320);
+        crc2.closePath();
+        crc2.strokeStyle = "#006200";
+        crc2.stroke();
+        crc2.fillStyle = "#006200";
+        crc2.fill();
+    }
+    function drawTree2(_x, _y, _color) {
+        crc2.beginPath();
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 30, _y);
+        crc2.lineTo(_x + 15, _y - 30);
+        crc2.closePath();
+        crc2.strokeStyle = _color;
+        crc2.stroke();
+        crc2.fillStyle = _color;
+        crc2.fill();
+    }
+    for (var i = 0; i < 6; i++) {
+        var x = 10 + Math.random() * 170;
+        var y = 380 + Math.random() * 170;
+        drawTree1(x, y, "#006200");
+    }
+    function drawTree1(_x, _y, _color) {
+        crc2.beginPath();
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 40, _y);
+        crc2.lineTo(_x + 20, _y - 60);
+        crc2.closePath();
+        crc2.strokeStyle = _color;
+        crc2.stroke();
+        crc2.fillStyle = _color;
+        crc2.fill();
+        //For Schleife Schneeflocken
+        for (var i = 0; i < 200; i++) {
+            var x = 0 + Math.random() * 800;
+            var y = 0 + Math.random() * 250;
+            drawSnowflakes(x, y, 2, 0, 2 * Math.PI, "#ffffff");
+        }
+        function drawSnowflakes(_x, _y, _radius, _winkel, _circle, _color) {
             crc2.beginPath();
-            crc2.moveTo(_x, _y);
-            crc2.lineTo(_x + 30, _y);
-            crc2.lineTo(_x + 15, _y - 30);
-            crc2.closePath();
-            crc2.strokeStyle = _color;
-            crc2.stroke();
+            crc2.arc(_x, _y, _radius, _winkel, _circle);
             crc2.fillStyle = _color;
             crc2.fill();
-        }
-        for (var i = 0; i < 6; i++) {
-            var x = 10 + Math.random() * 170;
-            var y = 380 + Math.random() * 170;
-            drawTree1(x, y, "#006200");
-        }
-        function drawTree1(_x, _y, _color) {
-            crc2.beginPath();
-            crc2.moveTo(_x, _y);
-            crc2.lineTo(_x + 40, _y);
-            crc2.lineTo(_x + 20, _y - 60);
-            crc2.closePath();
-            crc2.strokeStyle = _color;
-            crc2.stroke();
-            crc2.fillStyle = _color;
-            crc2.fill();
-            //For Schleife Schneeflocken
-            for (var i = 0; i < 200; i++) {
-                var x = 0 + Math.random() * 800;
-                var y = 0 + Math.random() * 250;
-                drawSnowflakes(x, y, 2, 0, 2 * Math.PI, "#ffffff");
-            }
-            function drawSnowflakes(_x, _y, _radius, _winkel, _circle, _color) {
-                crc2.beginPath();
-                crc2.arc(_x, _y, _radius, _winkel, _circle);
-                crc2.fillStyle = _color;
-                crc2.fill();
-            }
         }
     }
 })(Aufgabe2 || (Aufgabe2 = {}));

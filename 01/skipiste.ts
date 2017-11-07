@@ -219,7 +219,7 @@ function ski(): void {
     crc2.fillStyle = "#ffffff";
     crc2.fill(); 
 //Baum1
- /*   
+   
     crc2.beginPath();
     crc2.moveTo(50, 550);
     crc2.lineTo(100, 550);
@@ -268,7 +268,7 @@ function ski(): void {
     crc2.fill();
     
   }
-    */
+   
 function drawTree2(_x: number, _y: number, _color: string): void {
         
     crc2.beginPath();
@@ -327,4 +327,4 @@ function drawSnowflakes(_x: number, _y: number, _radius: number, _winkel: number
     }
  }
  }
-    }   
+       
