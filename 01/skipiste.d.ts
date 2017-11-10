@@ -1,2 +1,1 @@
-declare namespace Aufgabe2 {
-}
+declare function canvas(): void;
