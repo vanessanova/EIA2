@@ -14,28 +14,17 @@ namespace Aufgabe5 {
             this.colorHead = "#ff9f9f";
     
     }
+        
           moveanddraw(): void {
             this.move();
-            this.draw();
-          
-
-                
+            this.draw();           
         }
         
             move(): void {
-            this.x +=  Math.random() * 8 + 5; // hier experimentieren um
-            this.y += Math.random() * 8 + 10; // andere Bewegungsmuster zu finden
+            this.x +=  Math.random() * 2 + 2.5; // hier experimentieren um
+            this.y += Math.random() * 2 + 3; // andere Bewegungsmuster zu finden
         }
-      
-        draw(): void {
-           this.drawSkier();            
-          //  crc2.fillRect(this.x:number, this.y:number);
-        }
-        
-        setRandomStyle(): void {
-            this.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
-        }
-       
+   
         setStart(): void{
             
          this.x= Math.random()*290;
@@ -43,7 +32,7 @@ namespace Aufgabe5 {
         
         }
         
-        drawSkier() : void {
+        draw() : void {
             
         crc2.beginPath();
         crc2.moveTo(this.x, this.y);

@@ -13,16 +13,14 @@ namespace Aufgabe5 {
      export let crc2: CanvasRenderingContext2D;
 
     let ski: Skier[]=[];
-    //let squares: Square[] = [];
-    window.addEventListener("load", main);
+    let schnee: Schnee[] = [];         //Startwert Schneeflocken
+    let wolke: Wolke[] = [];        //Startwert Wolken
 
-
+   
     //Funktion Canvas    
     window.addEventListener("load", main);
-    let schneeX: number[] = [];
-    let schneeY: number[] = [];
-    let wolkeX: number[] = [];
-    let wolkeY: number[] = [];
+
+
   
     var image: any;
     
@@ -32,41 +30,25 @@ namespace Aufgabe5 {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
 
         crc2 = canvas.getContext("2d");
-        
-        for(let i:number=0 ; i< 5;i++){
+        //Skifahrer
+        for(let i:number=0 ; i< 5; i++){
             let s:Skier = new Skier();
-            s.setRandomStyle();
             ski[i] = s;
         }
         
-        /**  for (let i: number = 0; i < 5; i++) {
-            skier[i] = {
-                 x: 290,
-                y: 230,
-                dx: Math.random() * 8 + 5,
-                dy: Math.random() * 8 + 10,
-                color: "hsl(" + Math.random() * 360 + ", 100%, 50%)"
-            };}
-**/
-    
-        
-        
-        //Start Schnee,Skifahrer,wolke
-        for (let i = 0; i < 200; i++) {
-            schneeX[i] = 0 + Math.random() * 800;
-            schneeY[i] = 0 + Math.random() * 600;
+        //Schneeflocken
+        for (let i: number = 0; i < 500; i++) {
+            let s: Schnee = new Schnee();
+             schnee[i] = s;
         }
-          
-//        for (let i = 0; i < 3; i++) {
-//            skier[i].x = -20;
-//            skier[i].y = 250;
-//        }
-        
-     
-        for (let i = 0; i < 4; i++) {
-            wolkeX[i] = 0 + Math.random() * 800;
-            wolkeY[i] = 0 + Math.random() * 100 + 20;
+
+        //Wolken 
+        for (let i: number = 0; i < 4; i++) {
+            let s: Wolke = new Wolke();
+            wolke[i] = s;
         }
+        
+        
    //Zeichnen von Hintergrund
         
          //Himmel    
@@ -268,13 +250,7 @@ namespace Aufgabe5 {
         
         drawTree1(x, y, "#0B610B");
         }
- for (let i: number = 0; i < 6; i++) {
-    
-        let x: number = 10 + Math.random() * 170;
-        let y: number = 380 + Math.random() * 170;
         
-        drawTree2(x, y, "#006200");
-        }
   image = crc2.getImageData(0, 0, 800, 600);
         animiere();
     }  
@@ -292,47 +268,30 @@ namespace Aufgabe5 {
     
     }
   
-     function drawTree2(_x: number, _y: number, _color: string): void {
-        
-    crc2.beginPath();
-    crc2.moveTo(_x, _y);
-    crc2.lineTo(_x + 40, _y);
-    crc2.lineTo(_x + 20, _y - 60);
-    crc2.closePath();
-    crc2.strokeStyle = _color;
-    crc2.stroke();
-    crc2.fillStyle = _color;
-    crc2.fill();
-       }
-        
-      
-        
          function animiere() {
             console.log("Timeout");
             crc2.clearRect(0, 0, 600, 800); // loescht Hintergrund
             crc2.putImageData(image, 0, 0); 
+          
              
             //for-Schleife Schnee
-            for (let i = 0; i < schneeX.length; i++) {
-                if (schneeY[i] > 600) {
-                    schneeY[i] = 0;
-                }
-                     schneeY[i] += Math.random();
-                Schnee(schneeX[i], schneeY[i]);
-            }
+            for (let i: number = 0; i < schnee.length; i++) {
+            let s: Schnee = schnee[i];
+            s.moveanddraw();
+
+            if (s.y > 600) {
+                s.setStart();
+            }}
               //for-Schleife Wolken
-            for (let i = 0; i < wolkeX.length; i++) {
-                if (wolkeX[i] > 800) {
-                    wolkeX[i] = 0;
-                }
-                wolkeX[i] += Math.random();
-                Wolke(wolkeX[i], wolkeY[i]);
-            } 
+           for (let i: number = 0; i < wolke.length; i++) {
+            let s: Wolke = wolke[i];
+            s.moveanddraw();
+
+            if (s.x > 800) {
+                s.setStart();
+            }}
              
-             
-             
-              //for-Schleife Skifahrer
-           // for (let i: number = 0; i < 3; i++) 
+          //for-Schleife Ski
             
             for (let i: number = 0; i < ski.length; i++) {  
                     let s: Skier= ski[i];
@@ -344,44 +303,5 @@ namespace Aufgabe5 {
             }
               
             window.setTimeout(animiere, 20);
-        }
-    
-        //Schnee generieren
-        function Schnee(_x:number, _y:number) {
-            crc2.beginPath();
-            crc2.arc(_x, _y, 3, 0, 2 * Math.PI);
-            crc2.strokeStyle = "#FFFFFF";
-            crc2.stroke();
-            crc2.fillStyle = "#F1F7FA";
-            crc2.fill();
-        }
-        
- 
-        //Wolken generieren
-        function Wolke(_x:number, _y:number) {
-            crc2.beginPath();
-            crc2.arc(_x + 40, _y, 50, 0, 2 * Math.PI);
-            crc2.fillStyle = "#FFFFFF";
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x, _y - 20, 50, 0, 2 * Math.PI);
-            crc2.fillStyle = "#FFFFFF";
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x - 20, _y, 50, 0, 2 * Math.PI);
-            crc2.fillStyle = "#FFFFFF";
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x, _y + 30, 40, 0, 2 * Math.PI);
-            crc2.fillStyle = "#FFFFFF";
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x + 70, _y + 10, 30, 0, 2 * Math.PI);
-            crc2.fillStyle = "#FFFFFF";
-            crc2.fill();
-            crc2.beginPath();
-            crc2.arc(_x - 70, _y, 30, 0, 2 * Math.PI);
-            crc2.fillStyle = "#FFFFFF";
-            crc2.fill();
-        }    
+        }        
 }

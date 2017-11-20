@@ -11,21 +11,14 @@ var Aufgabe5;
             this.draw();
         };
         Skier.prototype.move = function () {
-            this.x += Math.random() * 8 + 5; // hier experimentieren um
-            this.y += Math.random() * 8 + 10; // andere Bewegungsmuster zu finden
-        };
-        Skier.prototype.draw = function () {
-            this.drawSkier();
-            //  crc2.fillRect(this.x:number, this.y:number);
-        };
-        Skier.prototype.setRandomStyle = function () {
-            this.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+            this.x += Math.random() * 2 + 2.5; // hier experimentieren um
+            this.y += Math.random() * 2 + 3; // andere Bewegungsmuster zu finden
         };
         Skier.prototype.setStart = function () {
             this.x = Math.random() * 290;
             this.y = 230;
         };
-        Skier.prototype.drawSkier = function () {
+        Skier.prototype.draw = function () {
             Aufgabe5.crc2.beginPath();
             Aufgabe5.crc2.moveTo(this.x, this.y);
             Aufgabe5.crc2.lineTo(this.x + 20, this.y + 10);
