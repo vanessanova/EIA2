@@ -9,8 +9,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Aufgabe5;
 (function (Aufgabe5) {
     var ski = [];
-    var schnee = []; //Startwert Schneeflocken
-    var wolke = []; //Startwert Wolken
+    var schnee = [];
+    var wolke = [];
     //Funktion Canvas    
     window.addEventListener("load", main);
     var image;
@@ -20,7 +20,7 @@ var Aufgabe5;
         Aufgabe5.crc2 = canvas.getContext("2d");
         //Skifahrer
         for (var i = 0; i < 5; i++) {
-            var s = new Aufgabe5.Skier();
+            var s = new Aufgabe5.Skier(); //new erzeugt ein Objekt der Klasse Skier
             ski[i] = s;
         }
         //Schneeflocken

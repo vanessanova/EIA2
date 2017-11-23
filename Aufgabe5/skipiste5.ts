@@ -13,8 +13,8 @@ namespace Aufgabe5 {
      export let crc2: CanvasRenderingContext2D;
 
     let ski: Skier[]=[];
-    let schnee: Schnee[] = [];         //Startwert Schneeflocken
-    let wolke: Wolke[] = [];        //Startwert Wolken
+    let schnee: Schnee[] = [];         
+    let wolke: Wolke[] = [];       
 
    
     //Funktion Canvas    
@@ -31,8 +31,8 @@ namespace Aufgabe5 {
 
         crc2 = canvas.getContext("2d");
         //Skifahrer
-        for(let i:number=0 ; i< 5; i++){
-            let s:Skier = new Skier();
+        for(let i:number=0 ; i< 5; i++){ //zählt bis 5 hoch 
+            let s:Skier = new Skier();  //new erzeugt ein Objekt der Klasse Skier
             ski[i] = s;
         }
         

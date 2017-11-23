@@ -1,6 +1,6 @@
 
 namespace Aufgabe5 {
-    export class Skier{
+    export class Skier{  //export macht klassen über datei hinweg grenzen nutzbar 
    
         x: number;
         y: number;
@@ -8,8 +8,9 @@ namespace Aufgabe5 {
         colorBody: string;
         
         
-  constructor () {
-            this.setStart();
+  constructor () {                  //constructor nimmt infos entgegen, so kann beim konstruieren des objekts
+                                   //infos übergeben werden
+            this.setStart();       //verweist auf eigenshaften des objekts setStart
             this.colorBody = "hsl(" + Math.random() * 360 + ", 45%, 65%)";  
             this.colorHead = "#ff9f9f";
     
@@ -21,8 +22,8 @@ namespace Aufgabe5 {
         }
         
             move(): void {
-            this.x +=  Math.random() * 2 + 2.5; // hier experimentieren um
-            this.y += Math.random() * 2 + 3; // andere Bewegungsmuster zu finden
+            this.x +=  Math.random() * 2 + 2.5; 
+            this.y += Math.random() * 2 + 3; 
         }
    
         setStart(): void{
