@@ -6,6 +6,7 @@ namespace Aufgabe6{
         color: string;
     
  constructor() {
+      console.log("Create shape");
             this.setColor();
             this.setStart();
         }
@@ -34,24 +35,4 @@ namespace Aufgabe6{
         }
 
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

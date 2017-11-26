@@ -299,12 +299,7 @@ namespace Aufgabe6 {
         }
           //for-Schleife Ski
             
-            for (let i: number = 0; i < ski.length; i++) {  
-                    let s: Skier= ski[i];
-                    s. moveanddraw();
-
-                  
-            }
+         
               
             window.setTimeout(animiere, 20);
         }        

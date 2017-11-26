@@ -7,9 +7,11 @@ var Aufgabe6;
 (function (Aufgabe6) {
     var Skier = (function (_super) {
         __extends(Skier, _super);
-        function Skier(_x, _y) {
+        function Skier() {
             _super.call(this);
             this.setStart();
+            this.colorBody = "hsl(" + Math.random() * 360 + ", 45%, 65%)"; // wo kann es sonst definiert werden?
+            this.colorHead = "#ff9f9f";
         }
         Skier.prototype.moveanddraw = function () {
             this.move();

@@ -7,9 +7,11 @@ namespace Aufgabe6 {
         colorBody: string;
         
         
-  constructor (_x: number, _y: number) {
+  constructor () {
             super();
             this.setStart();
+             this.colorBody = "hsl(" + Math.random() * 360 + ", 45%, 65%)";  // wo kann es sonst definiert werden?
+            this.colorHead = "#ff9f9f";
     
     }
         
