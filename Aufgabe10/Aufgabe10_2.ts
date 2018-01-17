@@ -7,9 +7,9 @@ namespace Aufgabe10 {
     }
 
     export let posten: Bestellposten[] = [
-        { art: "Baumart", name: "Nordmanntanne", preis: 20.00 }, //preis pro meter
-        { art: "Baumart", name: "Rotfichte", preis: 22.00 },//preis pro meter
-        { art: "Baumart", name: "Douglasie", preis: 26.00 },//preis pro meter
+        { art: "Baumart", name: "Nordmanntanne", preis: 20.00 }, 
+        { art: "Baumart", name: "Rotfichte", preis: 22.00 },
+        { art: "Baumart", name: "Douglasie", preis: 26.00 },
         { art: "Halter", name: "Holz-Ständer", preis: 13.95 },
         { art: "Halter", name: "Plastik-Ständer", preis: 15.95 },
         { art: "Halter", name: "Metall-Ständer", preis: 61.95 },

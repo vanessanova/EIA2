@@ -17,11 +17,10 @@ var Aufgabe10;
     var mail;
     var zusatz;
     var label;
-    //var basketBaumart: string[] = [bA[0][0], "" + bA[0][1]];
     var basketBaumart = ["bitte Baumart ausw�hlen", "0"];
     var basketHalter = ["bitte St�nder ausw�hlen", "0"];
     var basketBeleuchtung = [Aufgabe10.b[0][0], "" + Aufgabe10.b[0][1]];
-    var basketSchmuck = [];
+    var basketSchmuck = []; //erkl�ren
     var basketLieferopt = ["bitte Lieferoption ausw�hlen", "0"];
     function createElements() {
         var baumart = document.getElementById("baumart");
@@ -34,7 +33,7 @@ var Aufgabe10;
                 radioB3.value = "radio3." + i;
                 radioB3.id = "radio3." + i;
                 baumart.appendChild(radioB3);
-                //Text Auswahlm�glichkeit
+                //Erkl�ren
                 var label4 = document.createElement("label");
                 label4.id = "label" + i;
                 label4.htmlFor = radioB3.id;
@@ -51,7 +50,7 @@ var Aufgabe10;
                 stepper2.step = "1";
                 baumart.appendChild(stepper2);
                 var br = document.createElement("br");
-                baumart.appendChild(br);
+                baumart.appendChild(br); //wird nach zur Baumart ID im html gepushed
             }
         }
         //Halterung:
@@ -240,7 +239,7 @@ var Aufgabe10;
             }
         }
         var korb = document.getElementById("zusammenfassung");
-        korb.style.width = "30%";
+        korb.style.width = "35%";
         korb.style.height = "auto";
         korb.style.backgroundColor = "#B40404";
         korb.style.opacity = "0.95";
@@ -251,7 +250,7 @@ var Aufgabe10;
         korb.innerHTML += " " + basketLieferopt[0] + ": " + basketLieferopt[1] + "� <br>";
         gesamtpreis = parseFloat(basketBaumart[1]) + parseFloat(basketBeleuchtung[1]) + parseFloat(basketHalter[1]) + parseFloat(basketLieferopt[1]);
         for (var i = 0; i < stepper.length; i++) {
-            //Wenn anzahl nicht gleich 0 und die checkbox ausgew�hlt ist, dann......
+            //Wenn anzahl nicht gleich 0 und die checkbox ausgew�hlt ist dann
             if (checkBoxes[i] != null && checkBoxes[i].checked == true) {
                 gesamtpreis += parseFloat(basketSchmuck[i][1]); //preis dazurechnen
                 korb.innerHTML += "" + basketSchmuck[i][0] + " " + basketSchmuck[i][1] + "� <br>";
