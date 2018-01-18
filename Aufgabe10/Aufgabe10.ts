@@ -8,7 +8,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 
 namespace Aufgabe10 {
     window.addEventListener("load", createElements);
-    window.addEventListener("change", warenkorb);
+    window.addEventListener("change", warenkorb); //wartet auf veränderung (mehr als eine Baumart) 
 
     var name: HTMLInputElement;
     var strasse: HTMLInputElement;
@@ -16,13 +16,13 @@ namespace Aufgabe10 {
     var ort: HTMLInputElement;
     var plz: HTMLInputElement;
     var mail: HTMLInputElement;
-    var zusatz: HTMLTextAreaElement;
+    var zusatz: HTMLTextAreaElement; //was?
     var label: HTMLLabelElement;
 
     var basketBaumart: string[]= ["bitte Baumart auswählen", "0"];
     var basketHalter: string[] = ["bitte Ständer auswählen", "0"];
     var basketBeleuchtung: string[] = [b[0][0], "" + b[0][1]];
-    var basketSchmuck: string[][] = []; //erklären
+    var basketSchmuck: string[][] = []; 
     var basketLieferopt: string[] = ["bitte Lieferoption auswählen", "0"];
 
     function createElements(): void {
@@ -38,9 +38,9 @@ namespace Aufgabe10 {
                 radioB3.name = "radioGroupBaumart";
                 radioB3.value = "radio3." + i;
                 radioB3.id = "radio3." + i;
-                baumart.appendChild(radioB3);
+                baumart.appendChild(radioB3); //radioB3 wird an baumart angehängt
 
-                //Erklären
+                //durch label kann man auch auf text drücken
                 var label4 = document.createElement("label");
                 label4.id = "label" + i;
                 label4.htmlFor = radioB3.id;
@@ -74,7 +74,7 @@ namespace Aufgabe10 {
                 radioB.id = "radio" + i;
                 halterung.appendChild(radioB);
 
-                //Text auswahlmöglichkeiten erzeugen
+                //Text bei Button auswahlmöglichkeiten erzeugen
                 label = document.createElement("label");
                 label.id = "label" + i;
                 label.htmlFor = radioB.id;
@@ -219,6 +219,7 @@ namespace Aufgabe10 {
         }
 
         //Button:
+        
         //Submit button zur Überprüfung erstellen
         let button: HTMLDivElement = <HTMLDivElement>document.getElementById("button");
         let submit: HTMLButtonElement = document.createElement("button");
@@ -233,7 +234,7 @@ namespace Aufgabe10 {
     }
 
     function warenkorb(_event: Event): void {
-        let target: HTMLInputElement = <HTMLInputElement>_event.target;
+        let target: HTMLInputElement = <HTMLInputElement>_event.target; //target event setzt element das ausgewählt wird zurück 
         let stepper: HTMLInputElement[] = [];
         let stepper2: HTMLInputElement[] = [];
         let checkBoxes: HTMLInputElement[] = [];
@@ -243,8 +244,8 @@ namespace Aufgabe10 {
         for (let i: number = 0; i < posten.length; i++) {
             
             //Schmuck Warenkorb
-            if (posten[i].art == "Deko") {
-                stepper[i] = <HTMLInputElement>document.getElementById("stepper" + i);
+            if (posten[i].art == "Deko") { //wenn posten = deko und stepper ausgewählt zählt eins hoch
+                stepper[i] = <HTMLInputElement>document.getElementById("stepper" + i); 
                 checkBoxes[i] = <HTMLInputElement>document.getElementById("check" + i);
             }
             
@@ -286,7 +287,7 @@ namespace Aufgabe10 {
         korb.style.height = "auto";
         korb.style.backgroundColor = "#B40404";
         korb.style.opacity = "0.95";
-        korb.innerHTML = "<span class='wk'>Warenkorb</span> <hr>";
+        korb.innerHTML = "<span class='wk'>Warenkorb</span> <hr>";// span gruppiert inline elemente im doc. ohen sichtbare veränderung
         korb.innerHTML += "" + basketBaumart[0] + " " + basketBaumart[1] + "€ <br>";
         korb.innerHTML += basketHalter[0] + ": " + basketHalter[1] + "€ <br>";
         korb.innerHTML += "" + basketBeleuchtung[0] + ": " + basketBeleuchtung[1] + "€ <br>";
@@ -311,7 +312,7 @@ namespace Aufgabe10 {
     }
 
 
-    function handleMouseDown(_event: MouseEvent): void {
+    function handleMouseDown(_event: MouseEvent): void { //wartet auf MouseEvent
         let feedback: HTMLDivElement = document.createElement("div");
         feedback.style.paddingBottom = "1em";
         if (name.checkValidity() == false || strasse.checkValidity() == false || hausnummer.checkValidity() == false || ort.checkValidity() == false || plz.checkValidity() == false || mail.checkValidity() == false) {

@@ -24,8 +24,8 @@ var Aufgabe10;
     Aufgabe10.b = [];
     for (var i = 0; i < Aufgabe10.posten.length; i++) {
         if (Aufgabe10.posten[i].art == "Beleuchtung") {
-            var temp = [Aufgabe10.posten[i].name, Aufgabe10.posten[i].preis];
-            Aufgabe10.b.push(temp);
+            var preisname = [Aufgabe10.posten[i].name, Aufgabe10.posten[i].preis];
+            Aufgabe10.b.push(preisname);
         }
     }
 })(Aufgabe10 || (Aufgabe10 = {}));

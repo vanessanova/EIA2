@@ -8,19 +8,19 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Aufgabe10;
 (function (Aufgabe10) {
     window.addEventListener("load", createElements);
-    window.addEventListener("change", warenkorb);
+    window.addEventListener("change", warenkorb); //wartet auf ver�nderung (mehr als eine Baumart) 
     var name;
     var strasse;
     var hausnummer;
     var ort;
     var plz;
     var mail;
-    var zusatz;
+    var zusatz; //was?
     var label;
     var basketBaumart = ["bitte Baumart ausw�hlen", "0"];
     var basketHalter = ["bitte St�nder ausw�hlen", "0"];
     var basketBeleuchtung = [Aufgabe10.b[0][0], "" + Aufgabe10.b[0][1]];
-    var basketSchmuck = []; //erkl�ren
+    var basketSchmuck = [];
     var basketLieferopt = ["bitte Lieferoption ausw�hlen", "0"];
     function createElements() {
         var baumart = document.getElementById("baumart");
@@ -32,8 +32,8 @@ var Aufgabe10;
                 radioB3.name = "radioGroupBaumart";
                 radioB3.value = "radio3." + i;
                 radioB3.id = "radio3." + i;
-                baumart.appendChild(radioB3);
-                //Erkl�ren
+                baumart.appendChild(radioB3); //radioB3 wird an baumart angeh�ngt
+                //durch label kann man auch auf text dr�cken
                 var label4 = document.createElement("label");
                 label4.id = "label" + i;
                 label4.htmlFor = radioB3.id;
@@ -64,7 +64,7 @@ var Aufgabe10;
                 radioB.value = "radio" + i;
                 radioB.id = "radio" + i;
                 halterung.appendChild(radioB);
-                //Text auswahlm�glichkeiten erzeugen
+                //Text bei Button auswahlm�glichkeiten erzeugen
                 label = document.createElement("label");
                 label.id = "label" + i;
                 label.htmlFor = radioB.id;
@@ -199,7 +199,7 @@ var Aufgabe10;
         button.appendChild(submit);
     }
     function warenkorb(_event) {
-        var target = _event.target;
+        var target = _event.target; //target event setzt element das ausgew�hlt wird zur�ck 
         var stepper = [];
         var stepper2 = [];
         var checkBoxes = [];
@@ -243,7 +243,7 @@ var Aufgabe10;
         korb.style.height = "auto";
         korb.style.backgroundColor = "#B40404";
         korb.style.opacity = "0.95";
-        korb.innerHTML = "<span class='wk'>Warenkorb</span> <hr>";
+        korb.innerHTML = "<span class='wk'>Warenkorb</span> <hr>"; // span gruppiert inline elemente im doc. ohen sichtbare ver�nderung
         korb.innerHTML += "" + basketBaumart[0] + " " + basketBaumart[1] + "� <br>";
         korb.innerHTML += basketHalter[0] + ": " + basketHalter[1] + "� <br>";
         korb.innerHTML += "" + basketBeleuchtung[0] + ": " + basketBeleuchtung[1] + "� <br>";

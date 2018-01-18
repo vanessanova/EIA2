@@ -28,15 +28,14 @@ namespace Aufgabe10 {
         { art: "Lieferung", name: "Express-Lieferung", preis: 2.99 },
     ];
     
-    
-    export let b: string[][] = [];
+      export let b: string[][] = [];
     
     for (var i: number = 0; i < posten.length; i++) {
         
 
         if (posten[i].art == "Beleuchtung") {
-           var temp: any = [posten[i].name, posten[i].preis]; 
-           b.push(temp);
+           var preisname: any = [posten[i].name, posten[i].preis]; 
+           b.push(preisname);
         }
     }
 }
