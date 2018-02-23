@@ -74,6 +74,10 @@ var Aufgabe6;
             Aufgabe6.crc2.arc(this.x + 25, this.y + 460 + 5, 5, 0, 2 * Math.PI);
             Aufgabe6.crc2.fillStyle = "black";
             Aufgabe6.crc2.fill();
+            Aufgabe6.crc2.beginPath();
+            Aufgabe6.crc2.arc(this.x + 10, this.y + 480 + 10, 10, 0, 1 * Math.PI);
+            Aufgabe6.crc2.strokeStyle = "black";
+            Aufgabe6.crc2.fill();
         };
         Wolke.prototype.setColor = function () {
             this.color = "#D358F7";
