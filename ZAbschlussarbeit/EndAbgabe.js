@@ -28,7 +28,7 @@ var Aufgabe6;
     var frage3 = {
         frage: "Was ist Marceline?",
         af: ["Fee", "Mensch"],
-        ar: "Vampier"
+        ar: "Vampir"
     };
     var frage4 = {
         frage: "Als was Beobachtet Iceking Finn&Jake in Staffel 2, Folge 3 ?",
@@ -241,7 +241,7 @@ var Aufgabe6;
         div.style.background = "pink";
         div.style.width = "30%";
         div.style.height = "5em";
-        div.style.top = 10 + "em";
+        div.style.top = 13 + "em";
         div.style.left = "35%";
         div.id = "fr";
         div.innerHTML = fragenDaten[random2].frage;
@@ -251,7 +251,8 @@ var Aufgabe6;
             if (random != i) {
                 var div = document.createElement("div");
                 div.style.position = "absolute";
-                div.style.background = "pink";
+                div.style.background = "#F8E0E6";
+                div.style.cursor = "pointer";
                 div.style.width = "30%";
                 div.style.height = "5em";
                 div.style.top = 20 + (i * 6) + "em";
@@ -275,7 +276,8 @@ var Aufgabe6;
                 var inhalt = document.getElementById("content");
                 var div = document.createElement("div");
                 div.style.position = "absolute";
-                div.style.background = "pink";
+                div.style.cursor = "pointer";
+                div.style.background = "#F8E0E6";
                 div.style.width = "30%";
                 div.style.height = "5em";
                 div.style.top = 20 + (i * 6) + "em";
