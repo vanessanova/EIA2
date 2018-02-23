@@ -37,7 +37,7 @@ namespace Aufgabe6 {
     let frage3: Fragen = {
         frage: "Was ist Marceline?",
         af: ["Fee", "Mensch"],
-        ar: "Vampier"
+        ar: "Vampir"
     };
 
     let frage4: Fragen = {
@@ -299,7 +299,7 @@ var inhalt: HTMLDivElement = <HTMLDivElement>document.getElementById("content");
         div.style.background = "pink";
         div.style.width = "30%";
         div.style.height = "5em";
-        div.style.top = 10+ "em";
+        div.style.top = 13+ "em";
         div.style.left = "35%";
         div.id = "fr";
         div.innerHTML = fragenDaten[random2].frage;
@@ -312,13 +312,15 @@ var inhalt: HTMLDivElement = <HTMLDivElement>document.getElementById("content");
 
                 var div: HTMLDivElement = document.createElement("div");
                 div.style.position = "absolute";
-                div.style.background = "pink";
+                div.style.background = "#F8E0E6";
+                div.style.cursor= "pointer"
                 div.style.width = "30%";
                 div.style.height = "5em";
                 div.style.top = 20 + (i * 6) + "em";
                 div.style.left = "35%";
                 div.id = "f" + i;
                 div.style.font = 'Amatic SC';
+                
    
 
                 if (random == 1) {
@@ -341,7 +343,8 @@ var inhalt: HTMLDivElement = <HTMLDivElement>document.getElementById("content");
 
                 var div: HTMLDivElement = document.createElement("div");
                 div.style.position = "absolute";
-                div.style.background = "pink";
+                div.style.cursor= "pointer"
+                div.style.background = "#F8E0E6";
                 div.style.width = "30%";
                 div.style.height = "5em";
                 div.style.top = 20 + (i * 6) + "em";
