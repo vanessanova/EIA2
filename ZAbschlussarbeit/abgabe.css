@@ -1,0 +1,16 @@
+div {
+	
+	font-family: 'Archivo Narrow', sans-serif;
+	color: white;
+	font-size: 15px;
+	margin-left: 0,5em;
+
+}
+
+h1 {
+	font-family: 'Archivo Narrow', sans-serif;
+	color: #d300ff;
+	font-size: 20px;
+    text-align: center;
+    position: relative;
+}
